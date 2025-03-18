@@ -1,0 +1,75 @@
+*{
+    color: rgb(2, 2, 137);
+}
+body{
+    background-color:rgb(233, 248, 255);
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 300;
+
+}
+h1{
+    color: blue;
+    font-size: 2rem;
+    text-align: center;
+    text-transform:uppercase;
+    font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.body-font{font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 300;}
+h2{
+    font-size:  1.2rem;
+}
+h3{
+    color: brown;
+}
+p{
+    text-transform:initial;
+}
+
+.bule-color{
+    color: blue;
+}
+
+#pink-color{
+    color: deeppink;
+}
+
+section{
+    text-align: center;
+    border: 1px solid red;
+}
+.heading-border{
+    border: 3px dashed green;
+}
+/*===============
+p{
+    color: blue;
+   font-weight: bold ;
+}
+li{
+    color: darkblue;
+}
+================*/
+
+/*===============
+curly braces {}
+parenthese <>
+square brackets []
+round brackets ()
+colon :
+semicolon ;
+syntax: rules of the lang
+================*/
