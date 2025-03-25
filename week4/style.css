@@ -1,0 +1,38 @@
+body
+{
+    font-size: 1.1rem;
+    text-align:center;
+    margin: 0 auto;
+
+}
+h1{
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+p
+{
+    border: 1px solid crimson;
+    width: 400px;
+    min-height: 150px;
+    margin: 0 auto;
+    /*horizonal centeringa*/
+    /*padding-left: 30px*/
+    /*padding-top:40px*/
+    /*Top right bottom left */
+    /*padding:20px 30px 40px...*/
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed rgb(171, 171, 171);
+}
+.vcenter{
+    line-height: 360px;
+    /*height-top padding-bottom padding*/
+    /*400-20-20=360*/
+}
+
+span{
+    color:blue;
+    display: block;
+}
