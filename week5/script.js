@@ -47,4 +47,13 @@ let sNames=["A","B","C","D"];
 // console.log(sNames[0])---- A
 // console.log(sNames[1])---- B
 // console.log(sNames[2])---- C
-console.log(sNames[0]);
+
+//for loop
+for(let i=0;i<sNames.length;i++)
+{
+    console.log("Hello",sNames[i]);
+}
+//console.log("Hello",sNames[0]);
+//console.log("Hello",sNames[1]);
+//console.log("Hello",sNames[2]);
+//console.log("Hello",sNames[3]);
