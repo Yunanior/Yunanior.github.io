@@ -11,10 +11,8 @@ for(leti=0;i<shoppingCart.length;i++)
 {total=total+shoppingCart[i].price;
 console.log("Total so far is",total);
 }
-
 console.log("Discounted price is",total);
 let discount=0.1;
-
 if(total>100)
 {
     let discountedPrice=total-total*discount;
