@@ -1,0 +1,12 @@
+button{
+    padding: 20px;
+    font-size: 1.4 rem;
+    margin-bottom: 15px;
+}
+img{
+    display:block;
+}
+
+.round{
+    border-radius:50%;
+}
