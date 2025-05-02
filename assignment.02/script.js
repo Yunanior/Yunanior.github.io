@@ -42,34 +42,6 @@ video.addEventListener("ended", () => {
   isEnded = true;
 });
 
-// Track if video ended
-let isEnded = false;
-
-function togglePlayPause() {
-  if (isEnded) {
-    // Replay from start
-    video.currentTime = 0;
-    video.play();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-    isEnded = false;
-    return;
-  }
-
-  if (video.paused || video.ended) {
-    video.play();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-  } else {
-    video.pause();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
-  }
-}
-
-// When video ends, change play icon to replay
-video.addEventListener("ended", () => {
-  playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/replay.png";
-  isEnded = true;
-});
-
 //Audio section
 const muteUnmuteBtn=document.querySelector("#mute-unmute-btn");
 const muteUnmuteImg=document.querySelector("#mute-unmute-img");
