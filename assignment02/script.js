@@ -1,17 +1,9 @@
 const video = document.querySelector("#custom-video-player");
-const progressBar = document.querySelector("#progress-bar-fill");
-const playPauseBtn = document.querySelector("#play-pause-btn");
-const muteUnmuteBtn=document.querySelector("#mute-unmute-btn");
-const fastForwardBtn=document.querySelector("#fast-forward-btn");
-const replayBtn=document.querySelector("#replay-btn");
-
-
 
 video.removeAttribute("controls");
 
 //progressing bar section
-
-console.log(progressBar)
+const progressBar = document.querySelector("#progress-bar-fill");
 video.addEventListener("timeupdate", updateProgressBar);
 function updateProgressBar() {
   const value = (video.currentTime / video.duration) * 100;
@@ -19,8 +11,22 @@ function updateProgressBar() {
 }
 
 //play-pause button
+const playPauseBtn = document.querySelector("#play-pause-btn");
 const playPauseImg = document.querySelector("#play-pause-img");
+
+// Track if video ended
+let isEnded = false;
+
 function togglePlayPause() {
+  if (isEnded) {
+    // Replay from start
+    video.currentTime = 0;
+    video.play();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
+    isEnded = false;
+    return;
+  }
+
   if (video.paused || video.ended) {
     video.play();
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
@@ -30,7 +36,14 @@ function togglePlayPause() {
   }
 }
 
+// When video ends, change play icon to replay
+video.addEventListener("ended", () => {
+  playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/replay.png";
+  isEnded = true;
+});
+
 //Audio section
+const muteUnmuteBtn=document.querySelector("#mute-unmute-btn");
 const muteUnmuteImg=document.querySelector("#mute-unmute-img");
 function toggleAudio(){
     if(video.muted){
@@ -42,28 +55,45 @@ function toggleAudio(){
       }
 }
 
-//funtion
-replayBtn.addEventListener("click", videoReplay);
-function videoReplay(){
-   video.currentTime=0;
-   video.play();
-   playPauseImg.scr="https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-   replayBtn.style.diplay="none";
+//Replay tem button
+const replayTenBtn=document.querySelector("#replayTenBtn");
+  function toggleReplayTen() {
+    const video = document.getElementById("custom-video-player");
+    if (video) {
+      video.currentTime -= 10;
+    }
+  }
+
+// forward ten
+const forwardTenBtn=document.querySelector("#forwardTenBtn");
+  function toggleFowardTen() {
+    const video = document.getElementById("custom-video-player");
+    if (video) {
+      video.currentTime += 10;
+    }
+  }
+
+//full screen
+const fullscreenButton = document.querySelector("#full-screen-btn");
+
+fullscreenButton.addEventListener("click", toggleFullscreen);
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  }
 }
-
-// fast-forward
-fastForwardBtn.addEventListener("click", fastForward)
-function fastForward() {
-    video.playbackRate = video.playbackRate === 1 ? 2 : 1;
-}
-
-video.addEventListener("ended", () => {
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
-});
-
-progressBar.addEventListener("click",(e)=>{
-    const rect=progressBar.getBoundingClientRect();
-    const clickX=e.clickX-rect.left;
-    const width=rect.width;
-    const percentage=clickX/width;
-    video.currentTime=percentage*video.duration;})
