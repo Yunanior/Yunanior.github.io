@@ -13,10 +13,6 @@ function updateProgressBar() {
 //play-pause button
 const playPauseBtn = document.querySelector("#play-pause-btn");
 const playPauseImg = document.querySelector("#play-pause-img");
-
-// Track if video ended
-let isEnded = false;
-
 function togglePlayPause() {
   if (isEnded) {
     // Replay from start
@@ -35,7 +31,6 @@ function togglePlayPause() {
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
   }
 }
-
 // When video ends, change play icon to replay
 video.addEventListener("ended", () => {
   playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/replay.png";
