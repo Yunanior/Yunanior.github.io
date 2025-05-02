@@ -172,7 +172,12 @@ nav {
     /* Lighter color on hover */
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   }
-  
+  /*to differ if speeding up or not*/
+   #fast-forward-btn.active {
+    background-color: var(--decoration-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
 
   .progress-bar {
     margin-top: 10px;
