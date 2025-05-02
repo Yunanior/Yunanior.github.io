@@ -46,49 +46,7 @@ hearder {
     font-style:normal;
     /*added font, which is playful more fit the contexts*/
 }
-
-/* Navigation styling */
-nav {
-    /*deleted margin,added padding*/
-    /*becasue nav been moved into hearder section*/
-    padding-bottom: 5px;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content:space-around;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav a {
-    min-height: 100vh;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    text-transform: uppercase; 
-    text-decoration: none;
-    transition: 0.5s;
-    /* making hoving effect */ 
-    /* praparing for the forllowing transitions*/
-    font-family: "Red Hat Text", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    /*Using morden text to differ the nav section*/
-  }
-  ul:hover li a{
-    opacity: 0.1;
-    /*before the cursor hovering over the li a elements*/
-   }
- 
-   ul li a:hover{
-    opacity: 1;
-    /*after the cursor hovering over the li a elements*/
-   }
+/*delected the nav section*/
 
  /*media player styling*/
 
