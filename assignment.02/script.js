@@ -72,6 +72,21 @@ const forwardTenBtn=document.querySelector("#forwardTenBtn");
       video.currentTime += 10;
     }
   }
+  //fast forward
+  const fastForwardBtn = document.querySelector("#fast-forward-btn");
+let isFastForwarded = false;
+
+function toggleFastForward() {
+  if (!isFastForwarded) {
+    video.playbackRate = 2.0;
+    fastForwardBtn.classList.add("active");
+    isFastForwarded = true;
+  } else {
+    video.playbackRate = 1.0;
+    fastForwardBtn.classList.remove("active");
+    isFastForwarded = false;
+  }
+}
 
 //full screen
 const fullscreenButton = document.querySelector("#full-screen-btn");
