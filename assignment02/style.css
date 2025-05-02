@@ -89,19 +89,21 @@ nav {
     opacity: 1;
     /*after the cursor hovering over the li a elements*/
    }
-   .container {
-    max-width: 1000px;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: var(--text-color);
-    border-width: 2px;
-    border-style:outset;
-    border-radius: 1%;
-    background-color: var(--main-bg-color);
-  }
 
-  /* Media player styling */
+ /*media player styling*/
+
+ .container {
+  max-width: 1000px;
+  min-width: 500px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: var(--text-color);
+  border-width: 2px;
+  border-style:outset;
+  border-radius: 1%;
+  background-color: var(--main-bg-color);
+}
   .media-player {
     width: 100%;
     margin:0auto;
@@ -109,29 +111,72 @@ nav {
   .media-player video {
     max-width: 100%;
   }
-  
+ 
   .custom-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    /* pushes left & right groups apart */
     align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
+    flex-wrap: nowrap; 
+    /* Prevent wrapping to a second row */
   }
-
+  
+  
+  .controls-left,
+  .controls-right {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; 
+    /* space between buttons */
+  }
+  
   button {
     background-color: var(--decoration-color);
-    color: var(--decoration-color);
+    color: #2d0828;
     border: none;
-    padding: 8px 12px;
+    padding:8px 14px;
     cursor: pointer;
     font-size: 16px;
-    align-items: center;
+    white-space: nowrap;
     border-radius: 10%;
-    /*added border-radius*/
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   }
+  .controls-right button {
+    background-color: var(--text-color); 
+    border: none;
+    border-radius: 50%; 
+    /* make the button round */
+    padding: 10px; 
+    /* adjust padding to create a circle */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Optional hover effect */
+  .controls-right button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Hover effect */
+  button:hover {
+    transform: scale(1.05); 
+    /* Slightly grow the button */
+    background-color: #d0ff5a; 
+    /* Lighter color on hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+  
 
   .progress-bar {
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
     height: 10px;
     background-color: rgb(90, 61, 92);
@@ -147,6 +192,7 @@ nav {
     width: 0;
     transition: width 0.3s ease;
   }
+
   /* Footer styling */
 
   footer {
@@ -154,7 +200,7 @@ nav {
     flex-direction: column;
     background-color: var(--third-bg-color);
     color: var(--main-text-color);
-    padding: 10px 0;
+    padding: 10px ;
     width: 100%;
   }
   footer a{
