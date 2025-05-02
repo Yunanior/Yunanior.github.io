@@ -1,0 +1,182 @@
+:root {
+    --primary-bg-color: rgb(100, 29, 100);
+    --text-color: rgb(255, 77, 231);
+    --main-bg-color:#5824a6c3;
+    --main-text-color: #b1ff2a;
+    --main-btn-bg-color: #2d0828;
+  }
+
+  a{
+    color: var(--text-color);
+    margin-left: 20px;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: var(--main-btn-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Add additional styles as needed */
+  
+  /* Create a container for the main content */
+
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: var(--text-color);
+    border-width: 2px;
+    border-style:outset;
+    border-radius: 1%;
+    background-color: var(--main-bg-color);
+  }
+  h1{
+    text-wrap: nowrap;
+    /*if h1 element wrap, the header's height will become too high which takes a lot of space*/
+    /*so Added text-wrap:nowrap*/
+    color: var(--main-text-color);
+    font-size: 1.8rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style:normal;
+  }
+
+
+h2{
+  color: var(--main-text-color);
+    font-size: 1.8rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style:normal;
+    margin: 0 auto;
+}
+  header {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    padding: 10px;
+    width: 100%;
+    align-items:center;
+    background-color: var(--main-bg-color);
+  }
+  /*adding the hearder dont, which is playful more fit the contexts*/
+  
+  /* Navigation styling */
+  nav { 
+    padding: 10px ;
+    text-align:center; 
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin-right:0 auto;
+    /*change to 0auto*/
+  }
+  
+  nav a {
+    min-height: 100vh;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-transform: uppercase; 
+    text-decoration: none;
+    transition: 0.5s;
+    /* making hoving effect */ 
+    /* praparing for the forllowing transitions*/
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  /*Using morden text to differ the nav section*/
+  }
+
+  ul:hover li a{
+   opacity: 0.1;
+   /*before the cursor hovering over the li a elements*/
+  }
+
+  ul li a:hover{
+   opacity: 1;
+   /*after the cursor hovering over the li a elements*/
+  }
+
+  /* Media player styling */
+
+  .media-player {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .media-player video {
+    max-width: 100%;
+  }
+  
+  .custom-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .custom-controls button {
+    background-color: var(--main-text-color);
+    color: var(--main-text-color);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 10%;
+    /*added border-radius*/
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: rgb(90, 61, 92);
+    /* chenge the barcolor*/
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar span {
+    display: block;
+    height: 100%;
+    background-color:rgb(246, 56, 220) ;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .time-point{
+    font-family: "Rubik Iso", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: rem;
+    margin-bottom: 20px;
+    color:var(--text-color) ;
+  }
+
+
+  /* Footer styling */
+  footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    padding: 10px 0;
+    width: 100%;
+  }
