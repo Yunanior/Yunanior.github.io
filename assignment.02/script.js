@@ -1,5 +1,5 @@
 const video = document.querySelector("#custom-video-player");
-let isEnded = false; //  Declare the variable
+let videoEnded = false; //  Declare the variable
 video.removeAttribute("controls");
 
 //progressing bar section
@@ -21,10 +21,10 @@ video.addEventListener("ended", () => {
 });
 
 function togglePlayPause() {
-  if (isEnded) {
+  if (videoEnded) {
     video.currentTime = 0;
     video.play();
-    isEnded = false; // Reset
+    videoEnded = false; // Reset
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
   } else if (video.paused || video.ended) {
     video.play();
@@ -39,7 +39,7 @@ function togglePlayPause() {
 // When video ends, change play icon to replay
 video.addEventListener("ended", () => {
   playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/replay.png";
-  isEnded = true;
+  videoEnded = true;
 });
 
 //Audio section
