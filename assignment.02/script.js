@@ -1,5 +1,5 @@
 const video = document.querySelector("#custom-video-player");
-
+let isEnded = false; //  Declare the variable
 video.removeAttribute("controls");
 
 //progressing bar section
@@ -14,20 +14,19 @@ function updateProgressBar() {
 const playPauseBtn = document.querySelector("#play-pause-btn");
 const playPauseImg = document.querySelector("#play-pause-img");
 
-// Track if video ended
-let isEnded = false;
+
+video.addEventListener("ended", () => {
+  isEnded = true;
+  playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/replay.png"; // Optionally change to replay icon
+});
 
 function togglePlayPause() {
   if (isEnded) {
-    // Replay from start
     video.currentTime = 0;
     video.play();
+    isEnded = false; // Reset
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-    isEnded = false;
-    return;
-  }
-
-  if (video.paused || video.ended) {
+  } else if (video.paused || video.ended) {
     video.play();
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
   } else {
@@ -35,6 +34,7 @@ function togglePlayPause() {
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
   }
 }
+
 
 // When video ends, change play icon to replay
 video.addEventListener("ended", () => {
