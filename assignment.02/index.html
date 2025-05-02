@@ -40,6 +40,7 @@
         <!--added progress-bar-->
         <div class="custom-controls">
         <div class="controls-left">
+        <!--differ different controls sections to make sure all the buttons been put in the place easy to reach-->
         <button id="reply-ten-btn" onclick="toggleReplayTen()">
             <img 
             id="replay-ten-img"
@@ -56,13 +57,23 @@
               height="24"
             />
           </button>
-          <!--Added fast-forward-Button to speed the vedio-->
+          <!--Added forward-ten-Button to speed the vedio-->
         <button id="forword-ten-btn" onclick="toggleFowardTen()">
             <img 
             id="forward-ten-img"
             width="24" height="24" 
             src="https://img.icons8.com/ios-glyphs/24/forward-10.png" 
-            alt="forward-10"/>
+            alt="forward-10"/> 
+        <!--added replay-btn for user returning to the start-->
+        <button id="replay-btn" onclick="toggleVideoReplay()" style="display: none;">
+            <img
+            id="replay-img"
+            src="https://img.icons8.com/ios-glyphs/30/replay.png" 
+            alt="replay" 
+            width="24" 
+            height="24" 
+            />
+        </button>
         </div>
         <div class="controls-right">
         </button>
@@ -76,16 +87,15 @@
             height="24"  
             />
         </button>
-        <!--added replay-btn for user returning to the start-->
-        <button id="replay-btn" onclick="toggleVideoReplay()" style="display: none;">
-            <img
-            id="replay-img"
-            src="https://img.icons8.com/ios-glyphs/30/replay.png" 
-            alt="replay" 
-            width="24" 
-            height="24" 
-            />
+        <!--add fast-forward-btn to speed up the video-->
+        <button id="fast-forward-btn" onclick="toggleFastForward()">
+            <img 
+            id="fasr-forward-img"
+            width="24" height="24" 
+            src="https://img.icons8.com/ios-glyphs/24/fast-forward.png" 
+            alt="fast-forward"/>
         </button>
+
         <button id="full-screen-btn" onclick="toggleFullScreen()">
             <img 
             id="full-screen-img"
