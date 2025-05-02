@@ -1,88 +1,68 @@
 :root {
+    --main-bg-color:#2d0828;
     --primary-bg-color: rgb(100, 29, 100);
+    --third-bg-color:#5824a6c3 ;
+    --decoration-color: #b1ff2a;
     --text-color: rgb(255, 77, 231);
-    --main-bg-color:#5824a6c3;
-    --main-text-color: #b1ff2a;
-    --main-btn-bg-color: #2d0828;
   }
 
-  a{
-    color: var(--text-color);
-    margin-left: 20px;
-  }
-
-  body {
-    font-family: "Arial", sans-serif;
-    background-color: var(--main-btn-bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* Add additional styles as needed */
-  
-  /* Create a container for the main content */
-
-  .container {
-    max-width: 1000px;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: var(--text-color);
-    border-width: 2px;
-    border-style:outset;
-    border-radius: 1%;
-    background-color: var(--main-bg-color);
-  }
-  h1{
-    text-wrap: nowrap;
-    /*if h1 element wrap, the header's height will become too high which takes a lot of space*/
-    /*so Added text-wrap:nowrap*/
-    color: var(--main-text-color);
-    font-size: 1.8rem;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style:normal;
-  }
-
-
-h2{
-  color: var(--main-text-color);
-    font-size: 1.8rem;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style:normal;
-    margin: 0 auto;
+body,
+h1,
+p,
+ul {
+  margin: 0auto;
+  padding: 0auto;
 }
-  header {
-    display: flex;
-    flex-wrap:wrap;
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+hearder {
+    background-color: var(--third-bg-color);
+    color: var(--decoration-color);
+    padding: 7px ;
+    text-align: center;
+    /*added flex*/
+    /* To clear the title and the navigation bar */
+    display:flex;
+    /*Added Wrap*/
+    flex-wrap: wrap;
+    flex-direction: row;
+    /*added space-around*/
+    /* To make the hearder more readable*/
     justify-content: space-around;
-    padding: 10px;
     width: 100%;
-    align-items:center;
-    background-color: var(--main-bg-color);
-  }
-  /*adding the hearder dont, which is playful more fit the contexts*/
-  
-  /* Navigation styling */
-  nav { 
-    padding: 10px ;
-    text-align:center; 
+    font-size: 1.8rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style:normal;
+    /*added font, which is playful more fit the contexts*/
+}
+
+/* Navigation styling */
+nav {
+    /*deleted margin,added padding*/
+    /*becasue nav been moved into hearder section*/
+    padding-bottom: 5px;
+    text-align: center;
   }
   
   nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
   }
   
   nav ul li {
-    margin-right:0 auto;
-    /*change to 0auto*/
+    margin-right: 20px;
   }
   
   nav a {
@@ -94,57 +74,109 @@ h2{
     transition: 0.5s;
     /* making hoving effect */ 
     /* praparing for the forllowing transitions*/
-  font-family: "Red Hat Text", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  /*Using morden text to differ the nav section*/
+    font-family: "Red Hat Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*Using morden text to differ the nav section*/
   }
-
   ul:hover li a{
-   opacity: 0.1;
-   /*before the cursor hovering over the li a elements*/
-  }
+    opacity: 0.1;
+    /*before the cursor hovering over the li a elements*/
+   }
+ 
+   ul li a:hover{
+    opacity: 1;
+    /*after the cursor hovering over the li a elements*/
+   }
 
-  ul li a:hover{
-   opacity: 1;
-   /*after the cursor hovering over the li a elements*/
-  }
+ /*media player styling*/
 
-  /* Media player styling */
-
+ .container {
+  max-width: 1000px;
+  min-width: 500px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: var(--text-color);
+  border-width: 2px;
+  border-style:outset;
+  border-radius: 1%;
+  background-color: var(--main-bg-color);
+}
   .media-player {
     width: 100%;
-    margin: 0 auto;
+    margin:0auto;
   }
-  
   .media-player video {
     max-width: 100%;
   }
-  
+ 
   .custom-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    /* pushes left & right groups apart */
     align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
+    flex-wrap: nowrap; 
+    /* Prevent wrapping to a second row */
   }
   
-  .custom-controls button {
-    background-color: var(--main-text-color);
-    color: var(--main-text-color);
+  
+  .controls-left,
+  .controls-right {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; 
+    /* space between buttons */
+  }
+  
+  button {
+    background-color: var(--decoration-color);
+    color: #2d0828;
     border: none;
-    padding: 8px 12px;
+    padding:8px 14px;
     cursor: pointer;
     font-size: 16px;
+    white-space: nowrap;
+    border-radius: 10%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+  .controls-right button {
+    background-color: var(--text-color); 
+    border: none;
+    border-radius: 50%; 
+    /* make the button round */
+    padding: 10px; 
+    /* adjust padding to create a circle */
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
-    border-radius: 10%;
-    /*added border-radius*/
+    justify-content: center;
+    transition: transform 0.2s ease;
   }
   
+  /* Optional hover effect */
+  .controls-right button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Hover effect */
+  button:hover {
+    transform: scale(1.05); 
+    /* Slightly grow the button */
+    background-color: #d0ff5a; 
+    /* Lighter color on hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+  
+
   .progress-bar {
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
     height: 10px;
     background-color: rgb(90, 61, 92);
@@ -160,23 +192,17 @@ h2{
     width: 0;
     transition: width 0.3s ease;
   }
-  
-  .time-point{
-    font-family: "Rubik Iso", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: rem;
-    margin-bottom: 20px;
-    color:var(--text-color) ;
-  }
-
 
   /* Footer styling */
+
   footer {
     display: flex;
     flex-direction: column;
-    background-color: var(--main-bg-color);
+    background-color: var(--third-bg-color);
     color: var(--main-text-color);
-    padding: 10px 0;
+    padding: 10px ;
     width: 100%;
+  }
+  footer a{
+    color: #b1ff2a;
   }
