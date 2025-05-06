@@ -1,0 +1,198 @@
+body {
+    background-color: #1a120b;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #e5e5cb;
+    /* color: #3c2a21; */
+    font-size: 1.1rem;
+    gap: 1.5rem;
+  }
+  
+  .outer {
+    border: 2px dashed #e5e5cb7a;
+    width: 400px;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    opacity: 1;
+    /* background-color: cornsilk; */
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
+  }
+  
+  .tilt:hover {
+    transform: scale(1.1) rotate(10deg);
+    /* scale: 1.1; */
+    /* rotate: 10deg; */
+    background-color: #2ecc71; /* Change color on hover */
+  }
+  
+  button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    transition: scale 0.4s ease background-color 0.4s ease rotate 0.4 ease;
+    background-color: rgb(86, 173, 255);
+  }
+  button:hover{
+    background-color: rgb(31,45,73);
+    scale:0.9;
+    rotate:-10deg;
+  }
+
+  input{
+    cursor:pointer;
+    font-size: 1.4rem;
+    padding: 5px;
+    border-radius: 10px;
+    width: 8rem;
+    border:6px soild rgb(239, 21, 21);
+    transition: border-color 0.5s linear,translate 0.5s linear;
+  }
+input:hover{
+   border-color: aquamarine;
+   /*translate:10px -20px; */
+}
+
+#duck-icon{
+    cursor:pointer;
+    transition: fill 0.4s ease, translate 0.4s linear;
+}
+#duck-icon:hover{
+    fill: rgb(80, 211, 255);
+}
+
+#my-duck{
+    transition: scale 0.4s ease;
+}
+#my-duck:hover{
+    scale: 0.9;
+}
+
+.box{
+    background-color: purple;
+    animation-name: box-animation, border-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border:6px dashed purple
+}
+
+@keyframes box-animation{
+    0%{
+        background-color: purple;
+    }
+    20%{
+        background-color: coral;
+    }
+    40%{
+        background-color: blue;
+    }
+    60%{
+        background-color: limegreen;
+    }
+    80%{
+        background-color: yellow;
+    }
+    100%{
+        background-color: purple;
+    }
+}
+@keyframes border-animation{
+    0%{
+        border-color: yellow;
+    }
+    20%{
+        border-color: blue;
+    }
+    40%{
+        border-color: coral;
+    }
+    60%{
+        border-color: purple;
+    }
+    80%{
+        border-color:limegreen;
+    }
+    100%{
+        border-color: yellow;
+    }
+}
+#my-duck{
+    animation-name: bounce;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes bounce{
+    0%,20%,50%,100%{
+        translate: 0px 0px;
+    }
+    40%{
+        translate:0px -30px;
+    }
+    60%{
+        translate: 0px -16px;
+    }
+}
+  
+
+#spinner {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    animation: spinner 2s linear infinite; /* Spin animation */
+  }
+   
+#spinner{
+    width: 150px;
+    height:150px;
+    border:6px soild cornflowerblue;
+    border-top-color: crimson;
+    animation-name:loading;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+}
+
+@keyframes loading{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+}
+
+#my-heart{
+    width: 80px;
+    height: 80px;
+    animation:beat 2s ease infinite;
+}
+
+@keyframes beat{
+    0%{
+        scale:0.9;
+    }
+    50%{
+        scale:1.1;
+    }
+    100%{
+        scale: 0.9;
+    }
+}
