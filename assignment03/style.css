@@ -62,6 +62,7 @@ body {
   position: relative; /* Create positioning context */
   flex: 0 0 400px; /* Maintain original card width */
   min-width: 450px;
+  cursor: pointer;
 }
 
 .era-title {
