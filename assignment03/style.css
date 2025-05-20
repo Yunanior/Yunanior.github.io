@@ -148,7 +148,6 @@ img {
   padding: 30px;                       /* Increased padding */
   font-size: 1.1rem;                   /* Base font scaling */
   line-height: 1.6;                    /* Improved readability */
-  
   /* Existing Properties (from original CSS) */
   transform: rotateY(180deg);
   backface-visibility: hidden;
@@ -157,6 +156,7 @@ img {
   justify-content: center;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+   z-index: 1;
 }
 
 /* Title Enhancement */
@@ -167,6 +167,9 @@ h2 {
   margin-bottom: 30px;
 }
 
+.card-back h2 {
+  display: block !important; 
+}
 .card-back{
   font-weight: 500;
   font-size: 1.0em;                    /* Slight enlargement */
